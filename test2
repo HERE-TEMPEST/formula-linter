@@ -1,0 +1,10 @@
+:..
+#stack_dump
+STACK 2
+#u32/value 1
+#stack_dump
+STACK 2
+POP 2
+#u32/value 1
+#stack_dump
+

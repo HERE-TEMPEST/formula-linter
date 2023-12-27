@@ -1,0 +1,109 @@
+:..
+:..
+
+; stack = 1 [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+
+POP 1
+
+; stack = [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+
+CLONE LINK 3
+
+; stack = [input] [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+
+VALUE 1
+#string/u32/at
+POP LINK 2
+#test/a1_to_a/compare_to_not_eol   // result any ...stack
+POP 2
+#test/prepare_for 	           // node ...stack
+CLONE LINK 2
+#g/n
+FOR 5
+
+WHILE POST DEATH
+
+DELETE 1        ; сгенерированный узел #g/n
+POP LINK 1
+
+; stack = [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+
+CLONE LINK 2
+CLONE LINK 4
+CLONE LINK 6
+CLONE LINK 8
+
+POP 6
+POP 6
+POP 6
+POP 6
+
+; stack = [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
+
+CLONE LINK 3
+#test/utility/extract
+
+VALUE 87
+#stack_dump
+POP 1
+
+POP 1
+
+; stack = [input] [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
+
+VALUE 1
+#string/u32/at  ; value [input] [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
+
+
+VALUE 87
+#stack_dump
+POP 1
+
+#test/a1_to_a/compare_to_not_eol ; result value [input] [buffer] [output] ...
+POP 2    ; result [input] [buffer] [output] [input] ...
+POP LINK 2 ; result [buffer] [output] [input] ...
+
+CLONE LINK 6
+CLONE LINK 6
+CLONE LINK 6
+CLONE LINK 6
+CLONE LINK 6
+CLONE 6
+
+#test/prepare_for
+CLONE LINK 5
+#g/n
+FOR 5
+
+WHILE POST DEATH
+
+POP LINK 1
+POP LINK 1
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+#u32/value 0
+#test/utility/compare
+POP 2
+POP 2
+#test/prepare_for
+#test/a1_to_a/extract_buffer
+#g/n
+
+FOR 5
+
+WHILE POST DEATH
+
+POP LINK 1
+POP LINK 1
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+

@@ -1,0 +1,132 @@
+A1 -> A
+
+; если eof
+;  0.
+;    переложить все данные из буффера в выходящий и конец строки
+;  1. 
+;    Буффер пуст?
+;      1. буффер не пустой 
+;        сравнить с 1
+;          1.
+;            очистить буффер положить A в выходящий узел
+;          0.
+;            переложить все данные из буффера в выходящий и сам этот символ
+;      0. буффер пустой ( if_full - 1 если полный, 0 - если пустой )
+;        сравнить с А
+;          1.
+;            положить А в буффер
+;          0.
+;            положить в выходящий узел
+
+/// agent-src
+CLONE LINK 3
+#test/utility/extract
+POP 2
+#test/a1_to_a/compare_to_eol
+
+#test/prepare_for
+#test/a1_to_a/extract_buffer_eof_pkg
+#g/n
+FOR 3
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+#test/a1_to_a/compare_to_not_eol
+
+
+
+/// master
+#test/example/prepare
+#test/example/result
+#g/n
+
+; stack [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+// agent A1 -> A
+VALUE 1
+#test/prepare_for
+#test/a1_to_a/a1_to_a_agent
+#g/n
+FOR 5
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+VALUE 1
+CLONE LINK 1
+DATA 1
+POP 1
+
+; stack [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+
+
+/// a1_to_a_agent
+
+; stack 1 [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+POP 1
+
+CLONE LINK 3
+VALUE 1
+#string/u32/at
+POP 2
+#test/a1_to_a/compare_to_not_eol   // result any ...stack
+POP 2
+#test/prepare_for 	           // node ...stack
+#test/a1_to_a/a1_to_a_step
+#g/n
+FOR 5
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+CLONE LINK 3
+#test/utility/extract
+POP 1
+
+VALUE 1
+#string/u32/at
+; stack any [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+#test/a1_to_a/compare_to_not_eol
+POP 2
+#test/prepare_for
+CLONE LINK 
+#g/n
+FOR 5
+
+
+
+/// a1_to_a_step
+
+; stack [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+VALUE 1
+#string/u32/at
+; stack any [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+CLONE LINK 4
+VALUE 1
+#string/u32/at
+POP 2
+; stack any any [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+// 65 49
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

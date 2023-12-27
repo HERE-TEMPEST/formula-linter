@@ -1,0 +1,27 @@
+:..
+:..
+
+; stack: 1 [output] [buffer] value
+POP 1
+; stack: [output] [buffer] value
+CLONE LINK 2
+; stack: [buffer] [output] [buffer] value
+#test/utility/extract
+; stack: any [buffer] [output] [buffer] value
+POP 2
+; stack: any [output] [buffer] value
+CLONE LINK 2
+; stack: [output] any [output] [buffer] value
+DATA 1
+; stack: [output] [output] [buffer] value
+POP 1
+; stack: [output] [buffer] value
+CLONE 3
+; stack: value [output] [buffer] value
+CLONE LINK 2
+; stack: [output] 1 [output] [buffer] value
+DATA 1
+; stack: [output] [output] [buffer] value
+VALUE 1
+; stack: 1 [output] [output] [buffer] value
+

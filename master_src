@@ -1,0 +1,52 @@
+:..
+
+; #test/example/prepare
+; #test/example/result
+
+
+; stack: 1 [input] [output]
+
+POP 1
+
+#test/a1_to_a/a1_to_a_step
+#test/a1_to_a/a1_to_a_agent
+; stack [a1_to_a_agent] [a1_to_a_step] [input] [output]
+
+CLONE LINK 3
+CLONE LINK 5
+#g/n
+
+; stack: [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [input] [output]
+
+POP LINK 6
+POP LINK 6
+
+; agent A1 -> A
+VALUE 1
+#test/prepare_for
+CLONE LINK 5
+#g/n
+FOR 5
+
+WHILE POST DEATH
+
+#stack_dump
+
+DELETE 1
+POP LINK 1
+
+; END agent -> add eol to output
+VALUE 1
+CLONE LINK 3
+DATA 1
+POP LINK 1
+
+; stack [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step]
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+

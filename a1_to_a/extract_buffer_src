@@ -1,0 +1,30 @@
+:..
+:..
+
+DUMP DATA 2
+DUMP DATA 3
+DUMP DATA 4
+VALUE 17
+#stack_dump
+POP 1
+
+			; stack 1 [input] [output] [buffer] [metastack]
+			; stack = 1 [a1_to_a_step] [a1_to_a_agent] [input] [output] [buffer] [any link]
+
+
+POP 1			; stack [input] [output] [buffer] [metastack]
+
+POP LINK 1
+POP LINK 1
+
+CLONE LINK 3		; stack [buffer] [input] [output] [buffer] [metastack]
+#test/utility/extract   ; stack value [buffer] [input] [output] [buffer] [metastack]
+
+POP LINK 2		; stack value [input] [output] [buffer] [metastack]
+CLONE LINK 3		; stack [output] value [input] [output] [buffer] [metastack]
+DATA 1                  ; stack [output] [input] [output] [buffer] [metastack]
+POP LINK 1              ; stack [input] [output] [buffer] [metastack]
+
+POP LINK 1		; stack [output] [buffer] [metastack]
+POP LINK 1		; stack [buffer] [metastack]
+POP LINK 1		; stack [metastack]

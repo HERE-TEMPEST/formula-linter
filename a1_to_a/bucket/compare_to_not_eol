@@ -1,0 +1,6 @@
+:..
+:..
+
+#u32/value 1
+#test/utility/not_compare
+POP 2

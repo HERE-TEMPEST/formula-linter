@@ -1,0 +1,30 @@
+:..
+:..
+
+CLONE 2
+#u32/maximize 1
+CLONE 2
+#u32/minimize 3
+VALUE 1
+ADD 1
+POP 2
+VALUE 1
+ADD 2
+POP 3
+CLONE 2
+POP 3
+DIVIDE 1
+POP 2
+
+; invert
+VALUE 3
+ADD 1
+POP 2
+VALUE 2
+CLONE 2
+POP 3
+DIVIDE 1
+POP 2
+VALUE 2
+SUBTRACT 1
+POP 2

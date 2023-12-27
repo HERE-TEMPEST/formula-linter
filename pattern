@@ -1,0 +1,17 @@
+:..
+VALUE 49
+#test/compare
+POP 2
+CLONE 3
+VALUE 65
+#test/compare
+POP 2
+POP 2
+ADD 1
+VALUE 2
+CLONE 2
+POP 3
+POP 3
+DIVIDE 1
+POP 2
+

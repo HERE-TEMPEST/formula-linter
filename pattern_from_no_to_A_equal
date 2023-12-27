@@ -1,0 +1,45 @@
+:..
+#u32/value 126
+#u32/value 65
+#u32/value 33
+
+#u32/clone 4
+POP 5
+
+#test/utility/compare
+POP 3
+
+#u32/value 1
+#u32/minimize 1
+
+#u32/value 1
+#u32/multiply 1
+
+#u32/value 4
+#u32/subtract 1
+
+POP 2
+POP 2
+
+#u32/clone 2
+#u32/value 1
+
+#u32/minimize 1
+#u32/value 4
+
+#u32/multiply 1
+#u32/value 4
+
+#u32/subtract 1
+
+POP 2
+POP 2
+
+POP 2
+POP 3
+
+POP AT 0
+POP AT 1
+POP 1
+POP 1
+#stack_dump

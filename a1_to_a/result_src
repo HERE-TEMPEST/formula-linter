@@ -1,0 +1,35 @@
+:..
+:..
+
+DUMP DATA 2
+DUMP DATA 3
+DUMP DATA 4
+VALUE 15
+#stack_dump
+POP 1
+
+			; stack 1 [input] [output] [buffer] [a1_to_a_agent] [a1_to_a_step] [metastack]
+
+; положить А на выход
+; убрать символ из буффера
+
+
+POP 1			; stack [input] [output] [buffer] [metastack]
+#u32/value 65           ; stack 65 [input] [output] [buffer] [metastack]
+CLONE LINK 3		; stack [output] 65 [input] [output] [buffer] [metastack]
+
+DATA 1			; stack [output] [input] [output] [buffer] [metastack]
+POP LINK 1		; stack [input] [output] [buffer] [metastack]
+
+CLONE LINK 3		; stack [buffer] [input] [output] [buffer] [metastack]
+#test/utility/extract   ; stack value [buffer] [input] [output] [buffer] [metastack]
+POP 1			; stack [buffer] [input] [output] [buffer] [metastack]
+
+POP LINK 1		; stack [input] [output] [buffer] [metastack]
+POP LINK 1		; stack [output] [buffer] [metastack]
+POP LINK 1		; stack [buffer] [metastack]
+POP LINK 1		; stack [metastack]
+
+VALUE 98
+#stack_dump
+POP 1

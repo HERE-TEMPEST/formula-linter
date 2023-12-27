@@ -1,0 +1,11 @@
+:..
+#u32/value 1
+#u32/add 1
+POP 2
+#g/n
+#u32/value 0
+#u32/value 1
+#g/n
+DATA 2
+DELETE AT 3
+POP 2

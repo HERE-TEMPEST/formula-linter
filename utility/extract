@@ -1,0 +1,10 @@
+:..
+:..
+
+VALUE 1
+#string/u32/at
+STACK 2
+POP 2
+STACK 1
+CLONE 2
+POP 3

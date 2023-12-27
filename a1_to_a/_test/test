@@ -1,0 +1,15 @@
+:..
+:..
+
+#stack_dump
+VALUE 1
+#stack_dump
+#test/prepare_for
+#stack_dump
+
+#test/a1_to_a/t
+
+#g/n
+#stack_dump
+FOR 2
+

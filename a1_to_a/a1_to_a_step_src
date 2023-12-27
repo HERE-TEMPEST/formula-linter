@@ -1,0 +1,157 @@
+:..
+:..
+
+DUMP DATA 4
+DUMP DATA 3
+DUMP DATA 2
+VALUE 13
+#stack_dump
+POP 1
+
+; stack 1 [buffer] [output] [input] [metastack]
+POP 1
+
+; stack [buffer] [output] [input]
+
+VALUE 1
+#string/u32/at
+; stack any_buffer [buffer] [output] [input]
+
+#stack_dump ;  ; 0 ...stack
+
+CLONE LINK 4
+VALUE 1
+#string/u32/at
+POP LINK 2
+; stack any_input any_buffer [buffer] [output] [input]
+
+#stack_dump ; 69 0 ...stack
+
+CLONE 2                    ; stack any_buffer any_input any_buffer [buffer] [output] [input]
+#test/a1_to_a/compare_to_a ; stack result any_buffer any_input any_buffer [buffer] [output] [input]
+POP 2                      ; stack result any_input any_buffer [buffer] [output] [input]
+; сравнить с символом А    ; 0 69 0 ...stack
+
+#stack_dump
+
+#u32/value 1               ; stack 1 result any_input any_buffer [buffer] [output] [input]
+#test/utility/compare      ; stack result 1 result any_input any_buffer [buffer] [output] [input]
+			   ; 0 1 0 69 0 ...stack
+POP 2                      ; stack result result any_input any_buffer [buffer] [output] [input]
+POP 2 			   ; stack result any_input any_buffer [buffer] [output] [input]
+; сравнить результат с 1   ; 0 69 0 ...stack
+
+#stack_dump
+
+CLONE 2			   ; stack any_input result any_input any_buffer [buffer] [output] [input]
+		           ; 69 0 69 0 ...stack
+#test/a1_to_a/compare_to_1 ; stack result any_input result any_input any_buffer [buffer] [output] [input]
+		           ; 0 69 0 69 0 ...stack
+		           
+#stack_dump
+		           
+POP 2  			   ; stack result result any_input any_buffer [buffer] [output] [input]
+		           ; 0 0 69 0 ...stack ...stack
+; сравнить с символом 1
+
+#stack_dump
+
+
+#u32/value 1               ; stack 1 result result any_input any_buffer [buffer] [output] [input]
+		           ; 1 0 0 69 0 ...stack
+#test/utility/compare      ; stack result 1 result result any_input any_buffer [buffer] [output] [input]
+		           ; 0 1 0 0 69 0 ...stack
+		           
+#stack_dump
+
+POP 2		           ; stack result result result any_input any_buffer [buffer] [output] [input]
+POP 2		           ; stack result result any_input any_buffer [buffer] [output] [input]
+		           ; 1 0 69 0 ...stack
+; сравнить результат с 1
+
+#stack_dump
+
+; #test/utility/compare      ; stack result result result any_input any_buffer [buffer] [output] [input]
+			   ; 1 0 69 0 ...stack
+			   
+#u32/add 1   	           ; 1 0 69 0 ...stack
+#u32/value 2                ; 2 1 0 69 0 ...stack
+CLONE 2			   ; 1 2 1 0 69 0 ...stack
+DIVIDE 1		   ; 1 2 1 0 69 0 ...stack
+
+
+			   
+POP 2		  	   ; stack result result result any_input any_buffer [buffer] [output] [input]
+POP 2		  	   ; stack result result any_input any_buffer [buffer] [output] [input]
+POP 2		  	   ; stack result result any_buffer [buffer] [output] [input]
+POP 2		  	   ; stack result result [buffer] [output] [input]
+POP 2		  	   ; stack result [buffer] [output] [input]
+
+; останется 0, если замена не нужна (символы не подходят для замены)
+; останется 1, если замена нужна
+
+; stack 0/1 [buffer] [output] [input] [metastack]
+
+#stack_dump
+
+CLONE LINK 4
+CLONE LINK 4
+CLONE LINK 4
+CLONE 4
+
+#test/utility/prepare_for ; 0/1 [buffer] [output] [input] 0/1 [buffer] [output] [input] [metastack]
+#test/a1_to_a/result
+#g/n
+FOR 3
+
+WHILE POST DEATH
+
+VALUE 57
+#stack_dump
+POP 1
+
+DELETE 1
+POP LINK 1  ; [buffer] [output] [input] 0/1 [buffer] [output] [input] [metastack]
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+
+#u32/value 0
+#test/utility/compare
+POP 2
+POP 2
+
+VALUE 58
+#stack_dump
+POP 1
+
+#test/utility/prepare_for ; stack node [buffer] [output] [input] [metastack]
+#test/a1_to_a/swap
+#g/n
+FOR 3
+
+WHILE POST DEATH
+
+VALUE 59
+#stack_dump
+POP 1
+
+DELETE 1
+POP LINK 1  ; [buffer] [output] [input] [metastack]
+
+VALUE 60
+#stack_dump
+POP 1
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 1
+VALUE 61
+
+#stack_dump
+POP 1
+
+

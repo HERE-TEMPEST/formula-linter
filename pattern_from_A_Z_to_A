@@ -1,38 +1,19 @@
 :..
-#stack_dump
+
 #u32/value 90
-#stack_dump
 #u32/value 65
-#stack_dump
-
 #u32/clone 2
-#stack_dump
 #u32/maximize 3
-#stack_dump
-
 #u32/clone 3
-#stack_dump
 #u32/divide 1
-#stack_dump
-
 #u32/clone 3
-#stack_dump
 #u32/maximize 5
-#stack_dump
-
 #u32/minimize 4
-#stack_dump
-
 #u32/subtract 3
-#stack_dump
-
 #u32/multiply 1
-#stack_dump
-
 #u32/clone 6
-#stack_dump
 #u32/subtract 1
-#stack_dump
+
 
 POP 2
 POP 2
@@ -40,4 +21,4 @@ POP 2
 POP 2
 POP 2
 POP 2
-#stack_dump
+

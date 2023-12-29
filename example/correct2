@@ -1,0 +1,15 @@
+:..
+:..
+
+VALUE 40
+VALUE 33
+VALUE 65
+VALUE 49
+VALUE 41
+VALUE 1
+#g/n
+DATA 6
+
+
+; 40 33 65 49 41 1
+;  (  !  A  1  ) EOL

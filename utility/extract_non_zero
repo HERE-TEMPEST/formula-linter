@@ -1,0 +1,18 @@
+:..
+:..
+
+#formula-linter/utility/extract
+VALUE 1
+CLONE 2
+#u32/minimize 1
+#formula-linter/utility/prepare_for
+POP 2
+#formula-linter/utility/move_from_1_to_3
+#g/n
+FOR 3
+
+WHILE POST DEATH
+
+POP LINK 1
+POP LINK 1
+POP 1

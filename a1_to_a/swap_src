@@ -1,32 +1,23 @@
 :..
 :..
 
-DUMP DATA 2
-DUMP DATA 3
-DUMP DATA 4
-VALUE 14
-#stack_dump
-POP 1
+; stack 1 [input] [output] [buffer] [a1_to_a_agent] [a1_to_a_step] [metastack]
 
-			; stack 1 [input] [output] [buffer] [a1_to_a_agent] [a1_to_a_step] [metastack]
+POP 1								; stack [input] [output] [buffer] [metastack]
 
+CLONE LINK 3						; stack [buffer] [input] [output] [buffer] [metastack]
+#formula-linter/utility/extract   	; stack value [buffer] [input] [output] [buffer] [metastack]
 
-
-POP 1			; stack [input] [output] [buffer] [metastack]
-
-CLONE LINK 3		; stack [buffer] [input] [output] [buffer] [metastack]
-#test/utility/extract   ; stack value [buffer] [input] [output] [buffer] [metastack]
-
-POP LINK 2		; stack value [input] [output] [buffer] [metastack]
-CLONE LINK 3		; stack [output] value [input] [output] [buffer] [metastack]
+POP LINK 2				; stack value [input] [output] [buffer] [metastack]
+CLONE LINK 3			; stack [output] value [input] [output] [buffer] [metastack]
 DATA 1                  ; stack [output] [input] [output] [buffer] [metastack]
 POP LINK 1              ; stack [input] [output] [buffer] [metastack]
 
 VALUE 1
-#string/u32/at   ; stack value [input] [output] [buffer] [metastack]
+#string/u32/at   	; stack value [input] [output] [buffer] [metastack]
 
 CLONE LINK 4		; stack [buffer] value [input] [output] [buffer] [metastack]
-DATA 1			; stack [buffer] [input] [output] [buffer] [metastack]
+DATA 1				; stack [buffer] [input] [output] [buffer] [metastack]
 
 POP LINK 1		; stack [input] [output] [buffer] [metastack]
 POP LINK 1		; stack [output] [buffer] [metastack]

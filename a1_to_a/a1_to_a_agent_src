@@ -14,9 +14,9 @@ CLONE LINK 3
 VALUE 1
 #string/u32/at
 POP LINK 2
-#test/a1_to_a/compare_to_not_eol   // result any ...stack
+#formula-linter/a1_to_a/compare_to_not_eol
 POP 2
-#test/prepare_for 	           // node ...stack
+#formula-linter/utility/prepare_for 
 CLONE LINK 2
 #g/n
 FOR 5
@@ -41,12 +41,7 @@ POP 6
 ; stack = [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
 
 CLONE LINK 3
-#test/utility/extract
-
-VALUE 87
-#stack_dump
-POP 1
-
+#formula-linter/utility/extract
 POP 1
 
 ; stack = [input] [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
@@ -54,14 +49,9 @@ POP 1
 VALUE 1
 #string/u32/at  ; value [input] [buffer] [output] [input] [a1_to_a_agent] [a1_to_a_step] [any link]
 
-
-VALUE 87
-#stack_dump
-POP 1
-
-#test/a1_to_a/compare_to_not_eol ; result value [input] [buffer] [output] ...
-POP 2    ; result [input] [buffer] [output] [input] ...
-POP LINK 2 ; result [buffer] [output] [input] ...
+#formula-linter/a1_to_a/compare_to_not_eol 		; result value [input] [buffer] [output] ...
+POP 2    										; result [input] [buffer] [output] [input] ...
+POP LINK 2 										; result [buffer] [output] [input] ...
 
 CLONE LINK 6
 CLONE LINK 6
@@ -70,7 +60,7 @@ CLONE LINK 6
 CLONE LINK 6
 CLONE 6
 
-#test/prepare_for
+#formula-linter/utility/prepare_for
 CLONE LINK 5
 #g/n
 FOR 5
@@ -87,11 +77,11 @@ POP LINK 1
 POP LINK 1
 
 #u32/value 0
-#test/utility/compare
+#formula-linter/utility/compare
 POP 2
 POP 2
-#test/prepare_for
-#test/a1_to_a/extract_buffer
+#formula-linter/utility/prepare_for
+#formula-linter/a1_to_a/extract_buffer
 #g/n
 
 FOR 5

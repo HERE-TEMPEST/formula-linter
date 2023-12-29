@@ -1,4 +1,5 @@
 :..
+:..
 
 ; #test/example/prepare
 ; #test/example/result
@@ -8,8 +9,8 @@
 
 POP 1
 
-#test/a1_to_a/a1_to_a_step
-#test/a1_to_a/a1_to_a_agent
+#formula-linter/a1_to_a/a1_to_a_step
+#formula-linter/a1_to_a/a1_to_a_agent
 ; stack [a1_to_a_agent] [a1_to_a_step] [input] [output]
 
 CLONE LINK 3
@@ -23,7 +24,7 @@ POP LINK 6
 
 ; agent A1 -> A
 VALUE 1
-#test/prepare_for
+#formula-linter/utility/prepare_for
 CLONE LINK 5
 #g/n
 FOR 5

@@ -1,8 +1,8 @@
 :..
 :..
 
-; #test/example/prepare
-; #test/example/result
+; #formula-linter/example/correct1
+; #formula-linter/example/correct2
 
 
 ; stack: 1 [input] [output]

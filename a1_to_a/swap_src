@@ -25,7 +25,7 @@ FOR 2
 WHILE POST DEATH
 
 DELETE 1
-POP LINK                            ; stack value [output] [input] [output] [buffer] [metastack]
+POP LINK 1                          ; stack value [output] [input] [output] [buffer] [metastack]
 
 POP 1
 POP LINK 1                          ; stack [input] [output] [buffer] [metastack]

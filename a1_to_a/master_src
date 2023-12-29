@@ -31,8 +31,6 @@ FOR 5
 
 WHILE POST DEATH
 
-#stack_dump
-
 DELETE 1
 POP LINK 1
 

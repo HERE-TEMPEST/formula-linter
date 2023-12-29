@@ -1,0 +1,18 @@
+:..
+
+#g/n
+VALUE 1
+#formula-linter/utility/prepare_for
+
+#stack_dump
+
+#formula-linter/a1_to_a/master
+#g/n
+FOR 2
+
+POP LINK 1
+POP LINK 1
+POP LINK 1
+POP LINK 2
+
+#formula-linter/utility/rid_of_zeros

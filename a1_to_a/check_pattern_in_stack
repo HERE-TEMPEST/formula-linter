@@ -1,10 +1,12 @@
 :..
+:..
+
 VALUE 49
-#test/compare
+#formula-linter/utility/compare
 POP 2
 CLONE 3
 VALUE 65
-#test/compare
+#formula-linter/utility/compare
 POP 2
 POP 2
 ADD 1

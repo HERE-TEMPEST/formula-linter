@@ -2,5 +2,5 @@
 :..
 
 #u32/value 1
-#test/utility/not_compare
+#formula-linter/utility/not_compare
 POP 2

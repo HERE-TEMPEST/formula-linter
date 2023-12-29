@@ -6,7 +6,7 @@
 #u32/clone 4
 POP 5
 
-#test/utility/compare
+#formula-linter/utility/compare
 POP 3
 
 #u32/value 1

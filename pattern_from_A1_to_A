@@ -10,9 +10,11 @@ VALUE 1
 #g/n
 FOR 2
 
-POP LINK 1
+WHILE POST DEATH
+
 POP LINK 1
 POP LINK 1
 POP LINK 2
 
+#formula-linter/utility/rid_of_zeros
 #formula-linter/utility/rid_of_zeros

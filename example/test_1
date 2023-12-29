@@ -5,7 +5,7 @@
 
 #g/n
 VALUE 1
-#test/prepare_for
+#formula-linter/utility/prepare_for
 
 #formula-linter/master
 #g/n

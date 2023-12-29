@@ -17,7 +17,7 @@ POP 3                               ; stack value [output] [input] [output] [buf
 #formula-linter/utility/not_compare ; stack result 0 value [output] [input] [output] [buffer] [metastack]
 POP 2                               ; stack result value [output] [input] [output] [buffer] [metastack]
 
-#formula-linter/prepare_for         ; stack node value [output] [input] [output] [buffer] [metastack]
+#formula-linter/utility/prepare_for         ; stack node value [output] [input] [output] [buffer] [metastack]
 #formula-linter/a1_to_a/push_to_output  ; stack procedure node value [output] [input] [output] [buffer] [metastack]
 #g/n                                ; stack result_node procedure node value [output] [input] [output] [buffer] [metastack]
 FOR 2

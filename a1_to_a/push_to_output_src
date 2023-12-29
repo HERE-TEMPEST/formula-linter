@@ -1,0 +1,9 @@
+:..
+:..
+
+; stack 1 [output] value [metastack]
+
+POP 1     ; stack [output] value [metastack]
+DATA 1    ; stack [output] [metastack]
+
+POP LINK 1  ; stack [metastack]

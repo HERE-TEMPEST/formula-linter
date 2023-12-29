@@ -1,2 +1,11 @@
 packager.exe
 packager
+
+master
+
+./a1_to_a/a1_to_a_agent
+./a1_to_a/a1_to_a_step
+./a1_to_a/swap
+./a1_to_a/result
+./a1_to_a/extract_buffer
+./a1_to_a/push_to_output

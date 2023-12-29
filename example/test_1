@@ -1,0 +1,18 @@
+:..
+:..
+
+#formula-linter/example/correct_formula_1
+
+#g/n
+VALUE 1
+#test/prepare_for
+
+#formula-linter/master
+#g/n
+FOR 2
+
+WHILE POST DEATH
+
+DELETE 1
+POP LINK 1
+POP LINK 2

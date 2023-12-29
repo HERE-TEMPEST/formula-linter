@@ -8,10 +8,27 @@ POP 1								; stack [input] [output] [buffer] [metastack]
 CLONE LINK 3						; stack [buffer] [input] [output] [buffer] [metastack]
 #formula-linter/utility/extract   	; stack value [buffer] [input] [output] [buffer] [metastack]
 
-POP LINK 2				; stack value [input] [output] [buffer] [metastack]
-CLONE LINK 3			; stack [output] value [input] [output] [buffer] [metastack]
-DATA 1                  ; stack [output] [input] [output] [buffer] [metastack]
-POP LINK 1              ; stack [input] [output] [buffer] [metastack]
+POP LINK 2                          ; stack value [input] [output] [buffer] [metastack]
+CLONE LINK 3                        ; stack [output] value [input] [output] [buffer] [metastack]
+CLONE 2                             ; stack value [output] value [input] [output] [buffer] [metastack]
+POP 3                               ; stack value [output] [input] [output] [buffer] [metastack]
+
+#u32/value 0                        ; stack 0 value [output] [input] [output] [buffer] [metastack]
+#formula-linter/utility/not_compare ; stack result 0 value [output] [input] [output] [buffer] [metastack]
+POP 2                               ; stack result value [output] [input] [output] [buffer] [metastack]
+
+#formula-linter/prepare_for         ; stack node value [output] [input] [output] [buffer] [metastack]
+#formula-linter/a1_to_a/push_to_output  ; stack procedure node value [output] [input] [output] [buffer] [metastack]
+#g/n                                ; stack result_node procedure node value [output] [input] [output] [buffer] [metastack]
+FOR 2
+
+WHILE POST DEATH
+
+DELETE 1
+POP LINK                            ; stack value [output] [input] [output] [buffer] [metastack]
+
+POP 1
+POP LINK 1                          ; stack [input] [output] [buffer] [metastack]
 
 VALUE 1
 #string/u32/at   	; stack value [input] [output] [buffer] [metastack]
